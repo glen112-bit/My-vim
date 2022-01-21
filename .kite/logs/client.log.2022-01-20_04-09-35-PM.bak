@@ -1,0 +1,52 @@
+[kited] 2021/04/20 08:13:34.712989 app.go:195: listening at port: 46624
+[kited] 2021/04/20 08:13:34.713172 app.go:196: machine ID: 85009c64db2656d765f96347ea90704e
+[kited] 2021/04/20 08:13:34.713211 app.go:197: install ID: d8161531-e1ea-4f7e-ad72-3bdd1ecff237
+[kited] 2021/04/20 08:13:34.713246 app.go:198: OS: darwin
+[kited] 2021/04/20 08:13:34.713461 app.go:199: CPU: vendor Intel, brand Intel(R) Core(TM) i7-2620M CPU @ 2.70GHz, family 6, model 42, 2 cores, 4 threads, flags: AESNI,AVX,CLMUL,CMOV,CX16,HTT,IBPB,MMX,MMXEXT,NX,POPCNT,RDTSCP,SSE,SSE2,SSE3,SSE4.1,SSE4.2,SSSE3,STIBP,VMX
+[kited] 2021/04/20 08:13:34.713512 app.go:200: platform: darwin Standalone Workstation 10.15.7
+[kited] 2021/04/20 08:13:34.713543 app.go:201: root dir: /Users/glene.martinez/.kite
+[kited] 2021/04/20 08:13:34.713572 app.go:202: log file: /Users/glene.martinez/.kite/logs/client.log
+[kited] 2021/04/20 08:13:34.713602 app.go:203: dev mode: false
+[kited] 2021/04/20 08:13:34.713632 app.go:204: version: 0.20210310.0
+[kited] 2021/04/20 08:13:34.713660 app.go:205: configuration: Release
+[kited] 2021/04/20 08:13:34.713753 app.go:212: proxy: environment
+[kited] 2021/04/20 08:13:34.721208 client.go:172: Successfully loaded 0 licenses
+[kited] 2021/04/20 08:13:34.750223 manager.go:173: using tf_threads value of 1
+[kited] 2021/04/20 08:13:38.081674 manager.go:263: watching dir /Users/glene.martinez
+[kited] 2021/04/20 08:13:38.172191 app.go:334: using startup mode: SystemBoot
+[kited] 2021/04/20 08:13:38.172261 app.go:335: using startup channel: 
+[kited] 2021/04/20 08:13:38.172944 http.go:33: starting processHTTP(https://alpha.kite.com/)
+[kited] 2021/04/20 08:13:38.173114 state.go:75: track: setting user ids User{id:0 email: installID:d8161531-e1ea-4f7e-ad72-3bdd1ecff237 machineID:85009c64db2656d765f96347ea90704e}
+[kited] 2021/04/20 08:13:38.249051 manager.go:385: walking root dir /Users/glene.martinez
+[kited] 2021/04/20 08:13:39.560515 http.go:144: received login event
+[kited] 2021/04/20 08:13:39.560713 plugins.go:171: activated GoTick in plugin manager
+[kited] 2021/04/20 08:13:39.567157 listener.go:58: connection dropped: failed to get reader: WebSocket closed: read timed out: context canceled
+[kited] 2021/04/20 08:13:40.100652 manager.go:379: identifying with id: 786675
+[kited] 2021/04/20 08:13:40.672059 plugins.go:177: updating Kite_status flag for spyder settings: suboptimal = false
+[kited] 2021/04/20 08:13:40.713886 loghelper.go:114: uploaded 1 logs in 1.153233536s
+[kited] 2021/04/20 08:14:07.444012 track.go:167: tracker.Event: Background Library Walk Completed
+[kited] 2021/04/20 08:14:07.444367 manager.go:401: Library dirs: 0
+[kited] 2021/04/20 08:14:07.444442 manager.go:402: Walk took: 29.195065211s
+[kited] 2021/04/20 08:14:07.444485 manager.go:406: finished walking root dir /Users/glene.martinez
+[kited] 2021/04/20 08:14:19.641625 track.go:167: tracker.Event: Found Editors
+[kited] 2021/04/20 08:14:19.641818 track.go:167: tracker.Event: Found Installed Plugins
+[kited] 2021/04/20 08:14:19.763668 editorslist.go:19: Detected 0 running editors with 0 new entries, purged 0 entries
+[kited] 2021/04/20 08:14:19.763765 plugins_helpers.go:104: attempting to update atom, sublime3, vscode
+[kited] 2021/04/20 08:14:31.337113 track.go:167: tracker.Event: Successful Plugin Updates
+[kited] 2021/04/20 08:14:46.922207 autoinstall.go:84: no plugins installed automatically
+[kited] 2021/04/20 08:23:48.030945 handlers.go:68: GET /clientapi/plugins 200 4879 13.287937199s
+[kited] 2021/04/20 08:28:38.054070 manager.go:278: releasing resources due to user idle after 15 minutes
+[kited] 2021/04/20 08:28:38.054072 api.go:96: Unloading data for python
+[kited] 2021/04/20 08:33:48.116592 handlers.go:68: GET /clientapi/plugins 200 4878 13.430484223s
+[kited] 2021/04/20 08:43:38.185850 editorslist.go:19: Detected 0 running editors with 0 new entries, purged 0 entries
+[kited] 2021/04/20 08:43:46.505113 autoinstall.go:84: no plugins installed automatically
+[kited] 2021/04/20 08:43:48.506670 handlers.go:68: GET /clientapi/plugins 200 4878 13.814220741s
+[kited] 2021/04/20 08:53:47.869519 handlers.go:68: GET /clientapi/plugins 200 4878 13.212608823s
+[kited] 2021/04/20 09:03:47.436281 handlers.go:68: GET /clientapi/plugins 200 4878 12.779039512s
+[kited] 2021/04/20 09:13:38.133890 editorslist.go:19: Detected 0 running editors with 0 new entries, purged 0 entries
+[kited] 2021/04/20 09:13:39.899686 listener.go:58: connection dropped: failed to get reader: received close frame: status = StatusNormalClosure and reason = "408 408 Request Timeout"
+[kited] 2021/04/20 09:13:46.713610 autoinstall.go:84: no plugins installed automatically
+[kited] 2021/04/20 09:13:49.029438 handlers.go:68: GET /clientapi/plugins 200 4878 14.415730875s
+[kited] 2021/04/20 09:13:49.553984 plugins.go:171: activated GoTick in plugin manager
+[kited] 2021/04/20 09:13:49.598747 plugins.go:177: updating Kite_status flag for spyder settings: suboptimal = false
+[kited] 2021/04/20 09:23:48.183421 handlers.go:68: GET /clientapi/plugins 200 4879 13.572010584s
