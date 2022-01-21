@@ -1,5 +1,35 @@
+let s:plugged_autoload_prefix='~/.vim'
+let s:plugged_install_dir='~/.vim/plugged'
+if has('nvim')
+  let s:plugged_autoload_prefix='~/.local/share/nvim/site'
+  let s:plugged_install_dir='~/.local/share/nvim/plugged'
+endif
+
+let s:plugged_autoload_path=s:plugged_autoload_prefix . '/autoload/plug.vim'
+
+if empty(glob(s:plugged_autoload_path))
+  let s:command='!curl -fLo ' . s:plugged_autoload_path . ' --create-dirs '
+  let s:command.='https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+  silent exec s:command
+
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+function! MarkdownComposer(info)
+  if a:info.status == 'installed' || a:info.forced
+    if has('nvim')
+      silent! !cargo build --release
+    else
+      silent! !cargo build --release --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
+
 call plug#begin()
 
+Plug 'vim-syntastic/syntastic'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'Yggdroot/indentLine'
@@ -34,12 +64,25 @@ Plug 'honza/vim-snippets'
 "git nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'mlaursen/rmd-vim-snippets'
 
 call plug#end()
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+
+
 
 " ================================================================
 " vim-jsx
@@ -51,8 +94,11 @@ let g:jsx_ext_required=0
 " vim-airline
 " ================================================================
 " update airline to use solarized
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+
+let g:airline_theme='tomorrow'
+
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+
 
 
 "git
