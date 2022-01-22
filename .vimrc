@@ -68,8 +68,20 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'mlaursen/rmd-vim-snippets'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'vim-scripts/Emmet.vim'
+Plug 'vim-scripts/WebAPI.vim'
+
 
 call plug#end()
+
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+let g:ale_fix_on_save = 1
 
 
 set statusline+=%#warningmsg#
@@ -224,14 +236,50 @@ set hidden
 "set inccommand=split
 
 let g:UltiSnipsEditSplit="vertical"
-let mapleader=" "
 let g:user_emmet_leader_key=',,'
+let g:user_emmet_mode='a'    "enable all function in all mode.
 "let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets_custom.json')), "\n"))
+
+let g:user_emmet_settings = webapi#json#decode(
+\  join(readfile(expand('~/.snippets.json')), "\n"))
+
+
+
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+let g:user_emmet_settings = {
+\  'variables': {'lang': 'ja'},
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<title></title>\n"
+\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\              ."</head>\n"
+\              ."<body>\n\t${child}|\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}
+
+
+
 nmap <leader>s <Plug>(easymotion-s2)
 nmap <leader>nt :NERDTreeFind<CR>
 nmap <leader>s <plug>(easymotion-s2)
 nmap s :w<CR>
 nmap ss :wq<CR>
+nmap 88 :CocCommand eslint.executeAutofix<CR>
 nmap q :q<CR>
 nmap qq :q!<CR>
 

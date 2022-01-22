@@ -20,5 +20,11 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+    root: true
+  },
+  "plugins": ["prettier"],
+  "extends": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
   }
 }
