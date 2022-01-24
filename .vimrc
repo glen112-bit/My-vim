@@ -61,7 +61,7 @@ Plug 'jreybert/vimagit'
 Plug 'jupyter-vim/jupyter-vim'
 "Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-"git nerdtree
+Plug 'git nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 "Plug 'tpope/vim-fugitive'
@@ -114,7 +114,7 @@ let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 
 
 "git
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -151,12 +151,12 @@ let g:gitgutter_sign_modified_removed = '-'
 
 "typerscript
 let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
+let g:typescript_compiler_options = 'tscc'
 autocmd FileType typescript :set makeprg=tsc
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-let g:typescript_ignore_typescriptdoc
-let g:typescript_ignore_browserwords
+"let g:typescript_ignore_typescriptdoc
+"let g:typescript_ignore_browserwords
 
 let g:python3_host_prog="/path/to/python/executable/"
 
@@ -180,6 +180,7 @@ let g:coc_global_extensions=[
       \ 'coc-prettier',
       \ 'coc-tsserver',
       \ 'coc-yaml',
+      \ 'coc-emmet',
       \ 'coc-vimlsp',
       \ ]
 
